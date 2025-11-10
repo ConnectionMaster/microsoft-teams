@@ -420,31 +420,31 @@ The existing GitHub app you see in the app store can only be used for GHEC (host
   
   ![image2](https://user-images.githubusercontent.com/9424117/223646172-d57582fa-ee33-4e0c-897f-f79c33838956.png)
   
-6. Take note of application ID
-  
-  ![image15](https://user-images.githubusercontent.com/9424117/223646432-4a60de73-f5cc-4bfe-ab70-d63013551ed6.png)
+6. Take note of application ID and tenant ID
+
+  <img width="1227" height="358" alt="image" src="https://github.com/user-attachments/assets/03338bf8-5b90-435e-9373-519e6a51b550" />
   
 7. Click on “Certificates & secret” and generate a new client secret.
-8. Take note of application ID and client secret and navigate back GHES instance settings
+8. Take note of application ID, tenant ID and client secret and navigate back GHES instance settings
 9. Click on Deploy to Azure button
   
   <img width="609" alt="image7" src="https://user-images.githubusercontent.com/9424117/223646342-83542888-e97d-494f-b2b5-89e4098496ff.png">
   
-10. Select the subscription and resource group for Azure bot to be deployed. Enter the GHES hostname and the app ID previously generated and click Review + create.
+10. Select the subscription and resource group for Azure bot to be deployed. Enter the GHES hostname, the app ID and tenant ID previously generated and click Review + create.
 
     - If your GitHub Enterprise instance **is reachable on the public internet** make sure that the `Append '_msteams' to path` option is **checked**.
     - If your GitHub Enterprise instance **is not reachable on the public internet and requires a proxy** make sure that the `Append '_msteams' to path` option is **unchecked**. Also, enter the URL that will forward the traffic to the instance in `GHES Instance Host Name`.
   
-  <img width="725" alt="image16" src="https://user-images.githubusercontent.com/9424117/223646635-86d1875e-8427-45c9-8d0e-c51bb7877072.png">
+  <img width="725" height="661" alt="image" src="https://github.com/user-attachments/assets/2ad2896b-5bc4-4bed-bce5-c2e6017fa905" />
+
+11. Once the bot is provisioned. Return to the settings page and enter the app ID, tenant ID and client secret. If the GHES endpoint is not reachable on public internet and the traffic is going to be forwarded enter that URL in `Public Endpoint URL`. Click on Save client settings. 
   
-11. Once the bot is provisioned. Return to the settings page and enter the app ID and client secret. If the GHES endpoint is not reachable on public internet and the traffic is going to be forwarded enter that URL in `Public Endpoint URL`. Click on Save client settings.
-  
-  ![image8](https://user-images.githubusercontent.com/9424117/223646708-301a50ad-8e5f-4488-96c5-0d91be694eae.png)
+  <img width="979" height="589" alt="image" src="https://github.com/user-attachments/assets/ded71524-92a1-4930-9c8a-c2c871b5a6e1" />
   
 12. Once the settings are saved download the manifest from the generate manifest button. Click on green Save settings to persist the settings on the instance. Once settings are applied (could take 5-15 mins depending on the configuration). 
   
-  ![image5](https://user-images.githubusercontent.com/9424117/223646754-8bb231f0-3293-4f84-8e62-0e06c82b50ab.png)
-  
+  <img width="1130" height="538" alt="image" src="https://github.com/user-attachments/assets/c87b26cb-168c-43cf-88d0-7c7e6bf02329" />
+
 13. Upload the manifest to MS teams app. Steps [here](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload#upload-your-app) 
 
 And now you have a dedicated GHES integration with Microsoft teams. All the features that are available in our hosted GitHub integration (GHEC) will be available in GHES integration.
