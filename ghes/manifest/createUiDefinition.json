@@ -23,6 +23,15 @@
             }
         },
         {
+            "name": "MicrosoftTenantId",
+            "type": "Microsoft.Common.TextBox",
+            "label": "Microsoft Tenant ID",
+            "toolTip": "The Directory (tenant) ID where the app was registered. Found on the app's overview page in Entra ID.",
+            "constraints": {
+              "required": true
+            }
+        },
+        {
             "name": "pathParameter",
             "type": "Microsoft.Common.CheckBox",
             "label": "Append '_msteams' to path",
@@ -36,6 +45,7 @@
       "steps": [],
       "outputs": {
         "MicrosoftAppId": "[basics('MicrosoftAppId')]",
+        "MicrosoftTenantId": "[basics('MicrosoftTenantId')]",
         "GHESInstanceHostName": "[basics('GHESInstanceHostName')]",
         "pathParameter": "[if(equals(basics('pathParameter'), true), 'true', 'false')]"
       }

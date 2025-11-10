@@ -15,6 +15,9 @@
     "MicrosoftAppId": {
       "type": "string"
     },
+    "MicrosoftTenantId": {
+      "type": "string"
+    },
     "pathParameter": {
       "type": "bool",
       "defaultValue": true,
@@ -41,7 +44,8 @@
         "displayName": "GHE",
         "endpoint": "[variables('endpoint')]",
         "msaAppId": "[parameters('MicrosoftAppId')]",
-        "msaAppType": "MultiTenant"
+        "msaAppType": "SingleTenant",
+        "msaAppTenantId": "[parameters('MicrosoftTenantId')]"
       }
     },
     {
